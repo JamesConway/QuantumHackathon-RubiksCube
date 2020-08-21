@@ -464,10 +464,16 @@ class InteractiveCube(plt.Axes):
         move_list = self.cube._move_list[:]
         # traverse in the string
         # pass move state to Q solver
-        cu_state = '' 
-        cu_state  += "qrubik.PERM_"+move_list[0]+"1"  
-        for ele in move_list[1:]:
-            cu_state  += "+qrubik.PERM_"+ele+"1"
+        # pass move state to Q solver
+        if(len(move_list)==0):
+            cu_state = '' 
+            cu_state  += "qrubik.PERM_"+move_list[0]+"1"  
+        elif(len(move_list)>0):
+            cu_state = '' 
+            cu_state  += "qrubik.PERM_"+move_list[0]+"1"  
+            for ele in move_list[1:]:
+                cu_state  += "+qrubik.PERM_"+ele+"1"
+        # return string   
 
         # return string   
         #print(cu_state)
@@ -478,9 +484,9 @@ class InteractiveCube(plt.Axes):
         moves = qrubik.interpret_counts_for_gui(counts).split(" ")
         print("---------------------")
         print("--SOLVE MOVE LIST---")
-        print("---", end = '')
+        print("-------", end = '')
         print(' '.join(moves), end = '')
-        print("---")
+        print("--------")
         print("---------------------")
         for m in moves:
             if(m=='U'):
