@@ -1,3 +1,5 @@
+#Items for 3D rendering from https://github.com/davidwhogg/MagicCube
+
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import widgets
@@ -479,6 +481,7 @@ class InteractiveCube(plt.Axes):
         #print(cu_state)
         cube_init = qrubik.cube_conf_init(eval(cu_state))
         counts = qrubik.simulate_experiment(cube_init)
+        counts = pd.Series(counts).sort_values(ascending=False)[:32].to_dict()
         qrubik.plot_histogram(counts) 
         
         moves = qrubik.interpret_counts_for_gui(counts).split(" ")

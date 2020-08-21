@@ -1,4 +1,8 @@
+#Source https://github.com/davidwhogg/MagicCube
+
+
 import numpy as np
+
 
 class Quaternion:
     """Quaternion Rotation:
