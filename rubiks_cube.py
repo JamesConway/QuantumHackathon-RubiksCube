@@ -465,10 +465,10 @@ class InteractiveCube(plt.Axes):
         # traverse in the string
         # pass move state to Q solver
         # pass move state to Q solver
-        if(len(move_list)==0):
+        if(len(move_list)==1):
             cu_state = '' 
             cu_state  += "qrubik.PERM_"+move_list[0]+"1"  
-        elif(len(move_list)>0):
+        elif(len(move_list)>1):
             cu_state = '' 
             cu_state  += "qrubik.PERM_"+move_list[0]+"1"  
             for ele in move_list[1:]:
@@ -512,7 +512,9 @@ class InteractiveCube(plt.Axes):
                 self._draw_cube()
         self.cube._move_list = []
         self._draw_cube()
-        print(move_list)
+        print("---------------------")
+        print("--SOLVER COMPLETE---")
+        print("--------------------")
 
     def _randomize_cube(self, *args):
         num_moves = random.randint(1,20)
