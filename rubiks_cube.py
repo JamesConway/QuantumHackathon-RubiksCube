@@ -6,6 +6,7 @@ from matplotlib import widgets
 from projection import Quaternion, project_points
 import random
 import qrubik
+import pandas as pd
 
 """
 
