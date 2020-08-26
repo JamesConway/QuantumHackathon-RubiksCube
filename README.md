@@ -9,3 +9,9 @@ We propose a quantum algorithm for solving a 2x2x2 rubiks cube.
 
 You can run the solution via Quantum_Rubiks.ipynb
 
+# Requirements
+qiskit 0.15.1
+pandas 0.24.2
+numpy 1.19.1
+matplotlib 3.3.1
+jupyter notebook 6.0.1
